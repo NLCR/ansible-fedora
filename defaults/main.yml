@@ -1,0 +1,5 @@
+---
+fedora_url: https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-4.7.1/fcrepo-webapp-4.7.1-jetty-console.jar
+fedora_version: 4.7.1
+fedora_checksum: md5:a086463b317423000111f7dbc45fb674
+fedora_path: /opt/{{ fedora_url | basename }}

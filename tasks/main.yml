@@ -1,0 +1,16 @@
+---
+- name: 'get {{ fedora_url | basename }}'
+  get_url:
+    url: '{{ fedora_url }}'
+    dest: '{{ fedora_path }}'
+    checksum: '{{ fedora_checksum }}'
+  tags: fedora
+
+- name: start {{ fedora_url | basename }} in screen
+  shell: >
+    screen
+    -d
+    -m
+    java -jar {{ fedora_path }}
+    --port 18080
+  tags: fedora
