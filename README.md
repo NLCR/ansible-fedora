@@ -1,7 +1,7 @@
-Role Name
+Fedora 4
 =========
 
-A brief description of the role goes here.
+Simple role to install Fedora 4.
 
 Requirements
 ------------
@@ -14,21 +14,22 @@ Role Variables
 fedora_url: https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-4.7.1/fcrepo-webapp-4.7.1-jetty-console.jar
 fedora_version: 4.7.1
 fedora_checksum: md5:a086463b317423000111f7dbc45fb674
-fedora_jar: /opt/{{ fedora_url | basename }}
+fedora_path: /opt/{{ fedora_url | basename }}
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+- NLCR.java-oracle
+
+defaults/main.yml
+java_oracle_url: http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jre-8u121-linux-x64.rpm
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: NLCR.fedora, url: fedora_url: https://github.com/fcrepo4/fcrepo4/releases/download/fcrepo-4.7.1/fcrepo-webapp-4.7.1-jetty-console.jar, fedora_version: 4.7.1, fedora_checksum: md5:a086463b317423000111f7dbc45fb674 }
 
 License
 -------
@@ -38,4 +39,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Rudolf Kreibich
